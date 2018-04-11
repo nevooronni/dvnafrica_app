@@ -1,5 +1,7 @@
+from django.contrib.auth.views import logout
 from django.urls import path
 from . import views
+
 urlpatterns = [
     # URL form : "/api/messages/1/2"
     path('api/messages/<int:sender>/<int:receiver>', views.message_list, name='message-detail'), # For GET request.
@@ -10,4 +12,7 @@ urlpatterns = [
     path('api/users/', views.user_list, name='user-list'), # POST for new user and GET for all users list
     path('', views.index, name='index'),
     path('register', views.register_view, name='register'),
+    path('chat', views.chat_view, name='chats'),
+    path('api/messages/<int:sender>/<int:receiver>', views.message_list, name='message-detail'),
+    path('logout', logout, {'next_page': 'index'}, name='logout'),
 ]
