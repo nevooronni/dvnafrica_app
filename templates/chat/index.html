@@ -10,9 +10,9 @@
         <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/chat.js' %}"></script>
     </head>
-    <body>
+    <body style="background-image: url('static/img/support4.png'); background-repeat: no-repeat; background-size: cover;">
     {% block body %}
-        <div class="section blue lighten-3">
+        <!-- <div class="section blue lighten-3">
             <div class="container white-text center-align text">
             <h2>DVNAfrica</h2>
             <p>The customer support platform that serves you</p>
@@ -25,16 +25,27 @@
                 MaterializeCSS
             </div>
             </div>
-        </div>
-        <div class="container">
+        </div> -->
+
+        <nav>
+            <div class="nav-wrapper" style="background-color: #fff;">
+            <a href="#" class="brand-logo left" style="color: #2fc7f7; margin-left: 20%;">DVNAfrica</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a style="color: #000; font-weight: bold;" href="sass.html">FEATURES</a></li>
+                <li><a style="color: #000; font-weight: bold;" href="badges.html">PARTNERS</a></li>
+                <li><a style="color: #000; font-weight: bold; margin-right: 50%;" href="collapsible.html">CONTACT</a></li>
+            </ul>
+            </div>
+        </nav>
+        <div class="container" style="margin-top: 10%;">
             <div class="row">
-            <div class="col s12 m8 l6 offset-m2 offset-l3">
+                    <div class="col s12 m8 l6 offset-m2 offset-l3" style="background-color: #fff;">
                 <div class="section center-block">
                 <div>
                     {% block form %}
-                    <h3>
-                    Login
-                    </h3>
+                    <h5 style="font-family: Geometria, Helvetica Neue, Arial, Helvetica CY, Nimbus Sans L, sans-serif; color: #000; text-align: center; font-weight: bold;">
+                    GET STARTED
+                    </h5>
                     <form id="login-form" class="form-group" method="post">
                         {% csrf_token %}
                         <div class="row">
@@ -51,11 +62,11 @@
                         </div>
                         <div class="row">
                             <div class="col s8">
-                                <a href="{% url 'register' %}">Register</a>
+                                <a href="{% url 'register' %}" style="color: #2fc7f7;">REGISTER</a>
                             </div>
                             <div class="col s4">
                             <div class="right">
-                                <button class="btn blue waves-effect waves-light pull-s12">Login</button>
+                                <button class="btn waves-effect waves-light pull-s12" style="background-color: #2fc7f7;">Login</button>
                             </div>
                             </div>
                         </div>
